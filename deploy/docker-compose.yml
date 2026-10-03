@@ -1,0 +1,14 @@
+name: sephiria-guide
+
+services:
+  sephiria-guide:
+    image: ghcr.io/poco0v0/sephiria_guide_dfm05:latest
+    init: true
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8501:8501"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

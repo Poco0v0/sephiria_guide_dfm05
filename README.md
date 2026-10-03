@@ -54,6 +54,11 @@ docker run -d \
 
 首次发布的 GHCR 包默认可能为私有。若希望匿名拉取，在 GitHub 的 **Packages → 镜像包 → Package settings → Change visibility** 中设为 Public；保留私有时，拉取机器需要先执行 `docker login ghcr.io`，使用具有 `read:packages` 权限的 PAT 登录。
 
+### 使用已有 Nginx 部署
+
+`deploy/` 提供只启动网站的 `docker-compose.yml`、宿主机 Nginx 站点配置和部署步骤。
+网站端口绑定到 `127.0.0.1:8501`，由现有 Nginx 对外提供访问；详见 [服务器部署说明](deploy/README.md)。
+
 ### 本地构建
 
 在仓库根目录运行：
